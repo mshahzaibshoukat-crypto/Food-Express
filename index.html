@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FoodExpress - Home</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    body { font-family: 'Nunito', sans-serif; }
+    .brand { font-family: 'Fredoka One', cursive; }
+  </style>
+</head>
+<body class="bg-orange-50 text-gray-800">
+
+  <!-- NAVBAR -->
+  <nav class="bg-white shadow-md sticky top-0 z-50">
+    <div class="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
+      <a href="index.html" class="brand text-3xl text-orange-500">🍔 FoodExpress</a>
+      <div class="flex gap-6 text-sm font-700">
+        <a href="index.html" class="text-orange-500 font-bold">Home</a>
+        <a href="menu.html" class="text-gray-600 hover:text-orange-500 font-semibold transition">Menu</a>
+        <a href="contact.html" class="text-gray-600 hover:text-orange-500 font-semibold transition">Contact</a>
+        <a href="cart.html" class="text-gray-600 hover:text-orange-500 font-semibold transition">🛒 Cart</a>
+      </div>
+      <a href="menu.html" class="bg-orange-500 hover:bg-orange-600 text-white font-bold px-5 py-2 rounded-full text-sm transition shadow">Order Now</a>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="bg-gradient-to-br from-orange-500 to-red-500 text-white py-20 px-6">
+    <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
+      <div>
+        <span class="bg-white text-orange-500 font-bold text-xs px-4 py-1 rounded-full uppercase tracking-wide">🚀 Fast Delivery in 30 Min</span>
+        <h1 class="brand text-5xl md:text-6xl mt-5 mb-4 leading-tight">Delicious Food, Delivered to Your Door</h1>
+        <p class="text-orange-100 text-lg mb-8 leading-relaxed">Fresh, hot meals from the best restaurants around you. Order in seconds and track your delivery live.</p>
+        <div class="flex flex-wrap gap-4">
+          <a href="menu.html" class="bg-white text-orange-500 font-bold px-7 py-3 rounded-full shadow-lg hover:shadow-xl transition text-base">Browse Menu 🍽️</a>
+          <a href="contact.html" class="border-2 border-white text-white font-bold px-7 py-3 rounded-full hover:bg-white hover:text-orange-500 transition text-base">Contact Us</a>
+        </div>
+        <!-- quick stats -->
+        <div class="flex gap-8 mt-10">
+          <div>
+            <p class="brand text-3xl">50+</p>
+            <p class="text-orange-100 text-sm">Menu Items</p>
+          </div>
+          <div>
+            <p class="brand text-3xl">30 min</p>
+            <p class="text-orange-100 text-sm">Avg Delivery</p>
+          </div>
+          <div>
+            <p class="brand text-3xl">4.9 ★</p>
+            <p class="text-orange-100 text-sm">Customer Rating</p>
+          </div>
+        </div>
+      </div>
+      <div class="text-center text-[10rem] leading-none hidden md:block">
+        <img src="images.jpg" alt="Description of image" width="300">
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW IT WORKS -->
+  <section class="py-20 px-6 bg-white">
+    <div class="max-w-5xl mx-auto text-center">
+      <h2 class="brand text-4xl text-gray-800 mb-2">How It Works</h2>
+      <p class="text-gray-500 mb-12">Order your favourite food in 3 easy steps</p>
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-8">
+
+        <div class="bg-orange-50 rounded-2xl p-8 border border-orange-100">
+          <div class="text-5xl mb-4">📍</div>
+          <h3 class="font-extrabold text-lg mb-2">Choose Location</h3>
+          <p class="text-gray-500 text-sm">Enter your delivery address and we'll show restaurants near you.</p>
+        </div>
+
+        <div class="bg-orange-50 rounded-2xl p-8 border border-orange-100">
+          <div class="text-5xl mb-4">🛒</div>
+          <h3 class="font-extrabold text-lg mb-2">Pick Your Meal</h3>
+          <p class="text-gray-500 text-sm">Browse our menu and add your favourites to your cart.</p>
+        </div>
+
+        <div class="bg-orange-50 rounded-2xl p-8 border border-orange-100">
+          <div class="text-5xl mb-4">🚴</div>
+          <h3 class="font-extrabold text-lg mb-2">Fast Delivery</h3>
+          <p class="text-gray-500 text-sm">We deliver fresh and hot to your door in 30 minutes or less.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- POPULAR ITEMS -->
+  <section class="py-20 px-6 bg-orange-50">
+    <div class="max-w-6xl mx-auto">
+      <div class="text-center mb-12">
+        <h2 class="brand text-4xl text-gray-800 mb-2">Most Popular</h2>
+        <p class="text-gray-500">Loved by thousands of customers every day</p>
+      </div>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+
+        <div class="bg-white rounded-2xl shadow-sm border border-orange-100 overflow-hidden hover:shadow-md transition">
+          <div class="bg-orange-100 text-center py-8 text-6xl">🍕</div>
+          <div class="p-5">
+            <h3 class="font-extrabold text-base mb-1">Margherita Pizza</h3>
+            <p class="text-gray-400 text-xs mb-3">Classic tomato, mozzarella & basil</p>
+            <div class="flex items-center justify-between">
+              <span class="text-orange-500 font-extrabold text-lg">$12.99</span>
+              <a href="menu.html" class="bg-orange-500 text-white text-xs font-bold px-3 py-1.5 rounded-full hover:bg-orange-600 transition">Order</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-white rounded-2xl shadow-sm border border-orange-100 overflow-hidden hover:shadow-md transition">
+          <div class="bg-red-100 text-center py-8 text-6xl">🍔</div>
+          <div class="p-5">
+            <h3 class="font-extrabold text-base mb-1">Smash Burger</h3>
+            <p class="text-gray-400 text-xs mb-3">Double patty, cheese & special sauce</p>
+            <div class="flex items-center justify-between">
+              <span class="text-orange-500 font-extrabold text-lg">$10.99</span>
+              <a href="menu.html" class="bg-orange-500 text-white text-xs font-bold px-3 py-1.5 rounded-full hover:bg-orange-600 transition">Order</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-white rounded-2xl shadow-sm border border-orange-100 overflow-hidden hover:shadow-md transition">
+          <div class="bg-yellow-100 text-center py-8 text-6xl">🍣</div>
+          <div class="p-5">
+            <h3 class="font-extrabold text-base mb-1">Sushi Platter</h3>
+            <p class="text-gray-400 text-xs mb-3">12-piece assorted fresh sushi rolls</p>
+            <div class="flex items-center justify-between">
+              <span class="text-orange-500 font-extrabold text-lg">$18.99</span>
+              <a href="menu.html" class="bg-orange-500 text-white text-xs font-bold px-3 py-1.5 rounded-full hover:bg-orange-600 transition">Order</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-white rounded-2xl shadow-sm border border-orange-100 overflow-hidden hover:shadow-md transition">
+          <div class="bg-green-100 text-center py-8 text-6xl">🌮</div>
+          <div class="p-5">
+            <h3 class="font-extrabold text-base mb-1">Taco Trio</h3>
+            <p class="text-gray-400 text-xs mb-3">3 tacos with grilled chicken & salsa</p>
+            <div class="flex items-center justify-between">
+              <span class="text-orange-500 font-extrabold text-lg">$9.99</span>
+              <a href="menu.html" class="bg-orange-500 text-white text-xs font-bold px-3 py-1.5 rounded-full hover:bg-orange-600 transition">Order</a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+      <div class="text-center mt-10">
+        <a href="menu.html" class="bg-orange-500 hover:bg-orange-600 text-white font-bold px-8 py-3 rounded-full transition shadow">See Full Menu →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section class="py-20 px-6 bg-white">
+    <div class="max-w-5xl mx-auto text-center">
+      <h2 class="brand text-4xl text-gray-800 mb-2">What Customers Say</h2>
+      <p class="text-gray-500 mb-12">Real reviews from real food lovers</p>
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-6">
+
+        <div class="bg-orange-50 rounded-2xl p-6 border border-orange-100 text-left">
+          <p class="text-yellow-400 text-lg mb-3">★★★★★</p>
+          <p class="text-gray-600 text-sm mb-4">"Fastest delivery I've ever had! Food was piping hot and tasted amazing. FoodExpress is my go-to now."</p>
+          <div class="flex items-center gap-3">
+            <div class="bg-orange-200 w-10 h-10 rounded-full flex items-center justify-center font-bold text-orange-600">S</div>
+            <div>
+              <p class="font-bold text-sm">Sarah M.</p>
+              <p class="text-gray-400 text-xs">Regular Customer</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-orange-50 rounded-2xl p-6 border border-orange-100 text-left">
+          <p class="text-yellow-400 text-lg mb-3">★★★★★</p>
+          <p class="text-gray-600 text-sm mb-4">"The pizza here is absolutely incredible. The crust was perfect and delivery took only 25 minutes!"</p>
+          <div class="flex items-center gap-3">
+            <div class="bg-red-200 w-10 h-10 rounded-full flex items-center justify-center font-bold text-red-600">J</div>
+            <div>
+              <p class="font-bold text-sm">James K.</p>
+              <p class="text-gray-400 text-xs">Food Enthusiast</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-orange-50 rounded-2xl p-6 border border-orange-100 text-left">
+          <p class="text-yellow-400 text-lg mb-3">★★★★★</p>
+          <p class="text-gray-600 text-sm mb-4">"Great variety, affordable prices, and always on time. Highly recommend to anyone who loves good food!"</p>
+          <div class="flex items-center gap-3">
+            <div class="bg-green-200 w-10 h-10 rounded-full flex items-center justify-center font-bold text-green-600">A</div>
+            <div>
+              <p class="font-bold text-sm">Aisha R.</p>
+              <p class="text-gray-400 text-xs">Loyal Customer</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA BANNER -->
+  <section class="bg-gradient-to-r from-orange-500 to-red-500 text-white py-16 px-6 text-center">
+    <h2 class="brand text-4xl mb-3">Hungry? We've Got You Covered!</h2>
+    <p class="text-orange-100 mb-7 text-lg">Order now and get free delivery on your first order.</p>
+    <a href="menu.html" class="bg-white text-orange-500 font-extrabold px-8 py-3 rounded-full text-lg hover:shadow-lg transition">Order Now 🛵</a>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="bg-gray-900 text-gray-400 px-6 py-10 text-center">
+    <p class="brand text-2xl text-orange-400 mb-3">🍔 FoodExpress</p>
+    <p class="text-sm mb-4">Fresh food delivered fast — every single day.</p>
+    <div class="flex justify-center gap-6 text-sm mb-4">
+      <a href="index.html" class="hover:text-white transition">Home</a>
+      <a href="menu.html" class="hover:text-white transition">Menu</a>
+      <a href="contact.html" class="hover:text-white transition">Contact</a>
+      <a href="cart.html" class="hover:text-white transition">Cart</a>
+    </div>
+    <p class="text-xs text-gray-600">© 2026 FoodExpress. All rights reserved.</p>
+  </footer>
+
+</body>
+</html>

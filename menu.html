@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FoodExpress - Menu</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    body { font-family: 'Nunito', sans-serif; }
+    .brand { font-family: 'Fredoka One', cursive; }
+  </style>
+</head>
+<body class="bg-orange-50 text-gray-800">
+
+  <!-- NAVBAR -->
+  <nav class="bg-white shadow-md sticky top-0 z-50">
+    <div class="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
+      <a href="index.html" class="brand text-3xl text-orange-500">🍔 FoodExpress</a>
+      <div class="flex gap-6 text-sm">
+        <a href="index.html" class="text-gray-600 hover:text-orange-500 font-semibold transition">Home</a>
+        <a href="menu.html" class="text-orange-500 font-bold">Menu</a>
+        <a href="contact.html" class="text-gray-600 hover:text-orange-500 font-semibold transition">Contact</a>
+        <a href="cart.html" class="text-gray-600 hover:text-orange-500 font-semibold transition">🛒 Cart</a>
+      </div>
+      <a href="contact.html" class="bg-orange-500 hover:bg-orange-600 text-white font-bold px-5 py-2 rounded-full text-sm transition shadow">Contact Us</a>
+    </div>
+  </nav>
+
+  <!-- HEADER -->
+  <section class="bg-gradient-to-br from-orange-500 to-red-500 text-white py-14 px-6 text-center">
+    <h1 class="brand text-5xl mb-2">Our Menu</h1>
+    <p class="text-orange-100 text-lg">Freshly prepared with love — pick your favourite!</p>
+  </section>
+
+  <!-- MENU CONTAINER -->
+  <section class="py-14 px-6 max-w-6xl mx-auto" id="menu-container">
+    <div class="text-center text-gray-500 py-10">Loading menu...</div>
+  </section>
+
+  <!-- SCRIPT FOR BACKEND INTEGRATION -->
+  <script>
+    document.addEventListener('DOMContentLoaded', async () => {
+      const menuContainer = document.getElementById('menu-container');
+      
+      try {
+        const response = await fetch('/api/menu');
+        const menuItems = await response.json();
+        
+        // Group items by category
+        const categories = {};
+        menuItems.forEach(item => {
+          if (!categories[item.category]) categories[item.category] = [];
+          categories[item.category].push(item);
+        });
+
+        menuContainer.innerHTML = ''; // Clear loading text
+
+        for (const [category, items] of Object.entries(categories)) {
+          // Category Header
+          const categorySection = document.createElement('div');
+          categorySection.className = 'mb-12';
+          
+          let bgColor = category === 'Burgers' || category === 'Specials' ? 'bg-white rounded-3xl my-2 p-6' : '';
+          
+          categorySection.innerHTML = `
+            <div class="flex items-center gap-3 mb-8">
+              <h2 class="brand text-3xl text-gray-800">${category}</h2>
+              <div class="flex-1 h-0.5 bg-orange-200 ml-2"></div>
+            </div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6" id="cat-${category.replace(/\s+/g, '')}">
+            </div>
+          `;
+          
+          if (bgColor) categorySection.className += ` ${bgColor}`;
+          menuContainer.appendChild(categorySection);
+
+          const itemsContainer = document.getElementById(`cat-${category.replace(/\s+/g, '')}`);
+          
+          items.forEach(item => {
+            const isVeg = item.type === 'Veg';
+            const badgeClass = isVeg ? 'bg-green-100 text-green-600' : (item.type === 'Seafood' ? 'bg-blue-100 text-blue-600' : 'bg-red-100 text-red-600');
+            
+            const itemCard = document.createElement('div');
+            itemCard.className = 'bg-white rounded-2xl shadow-sm border border-orange-100 overflow-hidden hover:shadow-md transition flex flex-col';
+            itemCard.innerHTML = `
+              <div class="bg-orange-50 text-center py-4 flex justify-center items-center h-48 overflow-hidden">
+                <img src="${item.image}" alt="${item.name}" class="h-full object-cover">
+              </div>
+              <div class="p-5 flex-1 flex flex-col">
+                <div class="flex justify-between items-start mb-1">
+                  <h3 class="font-extrabold text-base">${item.name}</h3>
+                  <span class="text-xs ${badgeClass} font-bold px-2 py-0.5 rounded-full">${item.type}</span>
+                </div>
+                <p class="text-gray-400 text-sm mb-4 flex-1">${item.description}</p>
+                <div class="flex items-center justify-between mt-auto">
+                  <span class="text-orange-500 font-extrabold text-xl">$${item.price.toFixed(2)}</span>
+                  <button onclick="addToCart(${item.id})" class="bg-orange-500 text-white text-sm font-bold px-4 py-2 rounded-full hover:bg-orange-600 transition shadow-sm">Add to Order</button>
+                </div>
+              </div>
+            `;
+            itemsContainer.appendChild(itemCard);
+          });
+        }
+      } catch (error) {
+        console.error('Error fetching menu:', error);
+        menuContainer.innerHTML = '<div class="text-center text-red-500 py-10">Failed to load menu. Ensure the backend server is running.</div>';
+      }
+    });
+
+    async function addToCart(itemId) {
+      try {
+        const response = await fetch('/api/cart', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ itemId })
+        });
+        
+        if (response.ok) {
+          alert('Item added to cart!');
+        } else {
+          alert('Failed to add item to cart.');
+        }
+      } catch (error) {
+        console.error('Error adding to cart:', error);
+      }
+    }
+  </script>
+
+  <!-- ORDER CTA -->
+  <section class="bg-gradient-to-r from-orange-500 to-red-500 text-white py-14 px-6 text-center mt-10">
+    <h2 class="brand text-4xl mb-3">Ready to Order?</h2>
+    <p class="text-orange-100 mb-7 text-lg">Call us or reach out and we'll deliver fresh to your door!</p>
+    <a href="contact.html" class="bg-white text-orange-500 font-extrabold px-8 py-3 rounded-full text-lg hover:shadow-lg transition">Get in Touch 📞</a>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="bg-gray-900 text-gray-400 px-6 py-10 text-center">
+    <p class="brand text-2xl text-orange-400 mb-3">🍔 FoodExpress</p>
+    <p class="text-sm mb-4">Fresh food delivered fast — every single day.</p>
+    <div class="flex justify-center gap-6 text-sm mb-4">
+      <a href="index.html" class="hover:text-white transition">Home</a>
+      <a href="menu.html" class="hover:text-white transition">Menu</a>
+      <a href="contact.html" class="hover:text-white transition">Contact</a>
+      <a href="cart.html" class="hover:text-white transition">Cart</a>
+    </div>
+    <p class="text-xs text-gray-600">© 2026 FoodExpress. All rights reserved.</p>
+  </footer>
+
+</body>
+</html>

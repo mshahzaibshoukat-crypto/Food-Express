@@ -1,0 +1,145 @@
+{
+  "menu": [
+    {
+      "id": 1,
+      "name": "Margherita Pizza",
+      "category": "Pizza",
+      "price": 12.99,
+      "image": "MG pizza.jpg",
+      "type": "Veg",
+      "description": "Classic tomato base, fresh mozzarella & basil"
+    },
+    {
+      "id": 2,
+      "name": "Pepperoni Pizza",
+      "category": "Pizza",
+      "price": 14.99,
+      "image": "cheese-peprani-pizza.jpg",
+      "type": "Meat",
+      "description": "Loaded with pepperoni, cheese & tomato sauce"
+    },
+    {
+      "id": 3,
+      "name": "BBQ Chicken Pizza",
+      "category": "Pizza",
+      "price": 15.99,
+      "image": "BBQ.jpg",
+      "type": "Meat",
+      "description": "Smoky BBQ sauce, grilled chicken & red onion"
+    },
+    {
+      "id": 4,
+      "name": "Classic Smash Burger",
+      "category": "Burgers",
+      "price": 10.99,
+      "image": "C.S.B.jpg",
+      "type": "Meat",
+      "description": "Double smash patty, American cheese & secret sauce"
+    },
+    {
+      "id": 5,
+      "name": "Crispy Chicken Burger",
+      "category": "Burgers",
+      "price": 11.99,
+      "image": "C.C.B.jpg",
+      "type": "Meat",
+      "description": "Fried chicken fillet, pickles, coleslaw & mayo"
+    },
+    {
+      "id": 6,
+      "name": "Veggie Burger",
+      "category": "Burgers",
+      "price": 9.99,
+      "image": "VEG.jpg",
+      "type": "Veg",
+      "description": "Black bean patty, avocado, lettuce & tomato"
+    },
+    {
+      "id": 7,
+      "name": "Crispy Fries",
+      "category": "Sides",
+      "price": 3.99,
+      "image": "Crispy-Fries_8.webp",
+      "type": "Veg",
+      "description": "Golden, seasoned & perfectly crispy"
+    },
+    {
+      "id": 8,
+      "name": "Onion Rings",
+      "category": "Sides",
+      "price": 4.49,
+      "image": "O.R.png",
+      "type": "Veg",
+      "description": "Beer-battered & fried to perfection"
+    },
+    {
+      "id": 9,
+      "name": "Soft Drink",
+      "category": "Drinks",
+      "price": 2.49,
+      "image": "drinks.jpg",
+      "type": "Veg",
+      "description": "Coke, Sprite, or Fanta — your choice"
+    },
+    {
+      "id": 10,
+      "name": "Ice Cream",
+      "category": "Drinks",
+      "price": 3.49,
+      "image": "ice.jpg",
+      "type": "Veg",
+      "description": "Vanilla, chocolate or strawberry swirl"
+    },
+    {
+      "id": 11,
+      "name": "Butter Chicken Curry",
+      "category": "Specials",
+      "price": 16.99,
+      "image": "BCC.jpg",
+      "type": "Meat",
+      "description": "Rich creamy tomato curry with naan bread"
+    },
+    {
+      "id": 12,
+      "name": "Sushi Platter (12pc)",
+      "category": "Specials",
+      "price": 18.99,
+      "image": "sushi.jpg",
+      "type": "Seafood",
+      "description": "Assorted fresh sushi rolls with soy & wasabi"
+    },
+    {
+      "id": 13,
+      "name": "Taco Trio",
+      "category": "Specials",
+      "price": 9.99,
+      "image": "taco.jpg",
+      "type": "Meat",
+      "description": "3 corn tacos with grilled chicken, salsa & guac"
+    }
+  ],
+  "cart": [],
+  "messages": [
+    {
+      "id": 1777967395013,
+      "name": "M. SHAHZAIB SHOUKAT",
+      "email": "mshahzaibshoukat@gmail.com",
+      "message": "Tell me about menu",
+      "date": "2026-05-05T07:49:55.013Z"
+    },
+    {
+      "id": 1777967685324,
+      "name": "Ahsan",
+      "email": "mshahzaibshoukat@gmail.com",
+      "message": "How is tour restraunt going?\n",
+      "date": "2026-05-05T07:54:45.324Z"
+    },
+    {
+      "id": 1778005307372,
+      "name": "Saim",
+      "email": "saim@gmail.com",
+      "message": "Delievery was 5 minutes late\n",
+      "date": "2026-05-05T18:21:47.372Z"
+    }
+  ]
+}
